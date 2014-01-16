@@ -36,12 +36,16 @@ public class GUI {
 		JLabel lblPollSettings = new JLabel("Poll Settings");
 		
 		JCheckBox chckbxUseTor = new JCheckBox("Use TOR");
+		chckbxUseTor.setSelected(true);
 		
 		JSpinner spinner = new JSpinner();
 		
 		JLabel lblRestPeriod = new JLabel("Rest Period");
 		
 		JSlider slider = new JSlider();
+		slider.setPaintLabels(true);
+		slider.setValue(0);
+		slider.setMaximum(50);
 		
 		JLabel lblRandomness = new JLabel("Randomness");
 		
@@ -55,33 +59,32 @@ public class GUI {
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(chckbxUseTor)
 							.addContainerGap())
-						.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
-							.addGroup(groupLayout.createSequentialGroup()
-								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-									.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
-										.addGroup(groupLayout.createSequentialGroup()
-											.addGap(6)
-											.addComponent(lblPollFile, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
-										.addGroup(groupLayout.createSequentialGroup()
-											.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
-											.addPreferredGap(ComponentPlacement.UNRELATED)
-											.addComponent(btnLoad))
-										.addComponent(frmtdtxtfldExamplepollxml))
-									.addComponent(lblPollSettings))
-								.addContainerGap(284, Short.MAX_VALUE))
-							.addGroup(groupLayout.createSequentialGroup()
-								.addComponent(spinner, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(lblRestPeriod)
-								.addGap(304))
-							.addGroup(groupLayout.createSequentialGroup()
-								.addComponent(slider, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addComponent(lblRandomness)
-								.addGap(293)))
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+								.addGroup(groupLayout.createParallelGroup(Alignment.LEADING, false)
+									.addGroup(groupLayout.createSequentialGroup()
+										.addGap(6)
+										.addComponent(lblPollFile, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
+									.addGroup(groupLayout.createSequentialGroup()
+										.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 65, GroupLayout.PREFERRED_SIZE)
+										.addPreferredGap(ComponentPlacement.UNRELATED)
+										.addComponent(btnLoad))
+									.addComponent(frmtdtxtfldExamplepollxml))
+								.addComponent(lblPollSettings))
+							.addContainerGap(284, Short.MAX_VALUE))
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addComponent(spinner, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblRestPeriod)
+							.addGap(304))
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addComponent(slider, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblRandomness)
+							.addGap(293))
 						.addGroup(groupLayout.createSequentialGroup()
 							.addComponent(tglbtnStart)
-							.addContainerGap(295, Short.MAX_VALUE))))
+							.addContainerGap(359, Short.MAX_VALUE))))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -103,8 +106,8 @@ public class GUI {
 						.addComponent(lblRestPeriod))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(slider, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblRandomness))
+						.addComponent(lblRandomness)
+						.addComponent(slider, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(tglbtnStart)
 					.addContainerGap(21, Short.MAX_VALUE))
