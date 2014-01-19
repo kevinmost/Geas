@@ -13,6 +13,7 @@ public class Voter {
 	
 	static String url; // The variable that holds the URL
 	static String choice; // The variable that holds the choice we are selecting
+	static Poll poll;
 	
 	static SimpleDateFormat sdf = new SimpleDateFormat("h:mm:ss a");
 
@@ -38,7 +39,7 @@ public class Voter {
 					url = pollList.get(0);
 					choice = pollList.get(1);
 
-					Poll poll = new Poll(url); // Create a poll object of this URL and that will click on your specified value
+					poll = new Poll(url); // Create a poll object of this URL and that will click on your specified value
 					poll.vote(choice); // Vote for the previously-specified value
 
 					System.out.format(TABLE_FORMAT, // Prints table of:

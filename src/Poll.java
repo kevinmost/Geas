@@ -17,7 +17,6 @@ public class Poll {
 	static ProxyConfig proxy; // Tor proxy
 	static CookieManager cookies; // Cookies
 	
-	
 	static HtmlPage page; // Webpage for the poll
 	
 	static String pollTitle; // Get the title of the poll
